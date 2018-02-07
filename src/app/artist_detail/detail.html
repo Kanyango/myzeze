@@ -1,0 +1,51 @@
+<br>
+
+<div class="ui gri">
+  <div class="row">
+    <div class="ui segment">
+      <br>
+      <h2>Fadhili</h2>
+      <br>
+    </div>
+  </div>
+</div>
+<br>
+<div class="ui grid">
+  <div class="row">
+    <div class="two wide column"></div>
+    <div class="twelve wide column">
+
+      <div class="ui fluid card">
+        <div class="content">
+          <h2 class="header">Albums</h2>
+        </div>
+        <div class="content">
+          <sui-accordion [closeOthers]="false" class="styled fluid">
+            <sui-accordion-panel [isOpen]="false" *ngFor="let one of albums">
+                <div title>
+                    <i class="dropdown icon"></i>
+                    {{ one.name }}
+                </div>
+                <div content>
+                  <div class="ui selection list">
+                      <div class="item" *ngFor="let track of one.tracks; let i = index">
+                        <div class="content">
+                          <div class="ui left floated header">
+                            {{ i + 1 }}.{{ track.title }}
+                          </div>
+                          <div class="ui right floated content">
+                            <button type="button" class="ui medium icon button">
+                              <i class="add icon"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </sui-accordion-panel>
+        </sui-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

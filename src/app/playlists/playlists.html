@@ -1,0 +1,50 @@
+<br>
+<br>
+<br>
+<br>
+<div class="ui grid">
+  <div class="row">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="header">
+            My Playlist
+          </div>
+        </div>
+        <div class="content">
+          <sui-accordion [closeOthers]="false" class="styled fluid">
+            <sui-accordion-panel [isOpen]="false" *ngFor="let one of playlists">
+                <div title>
+                    <i class="dropdown icon"></i>
+                    {{ one.name }}
+                    <div class="ui right floated content">
+                      <button class="ui icon button">
+                        <i class="play icon"></i>
+                      </button>
+                    </div>
+                </div>
+
+                <div content>
+                  <div class="ui selection list">
+                      <div class="item" *ngFor="let track of one.tracks; let i = index">
+                        <div class="content">
+                          <div class="ui left floated header">
+                            {{ i + 1 }}.{{ track.title }}
+                          </div>
+                          <div class="ui right floated content">
+                            <button type="button" class="ui medium icon button">
+                              <i class="play icon"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </sui-accordion-panel>
+        </sui-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
